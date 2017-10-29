@@ -40,6 +40,7 @@ using namespace std;
 				
 				PodajAdres(adres);	
 		 };
+		 
  		bool PodajImie(string imie)
 		 {
  			if(imie.find_first_of("0123456789") != std::string::npos)
@@ -54,6 +55,7 @@ using namespace std;
  				return 1;
  			}
 		 };
+		 
 		 bool PodajNazwisko(string nazwisko)
 		 {
  			if(nazwisko.find_first_of("0123456789") != std::string::npos)
@@ -90,7 +92,6 @@ using namespace std;
 			 
 			 else
 			 {
-			int size=pesel.size();
 		 	stringstream ss;
 		 	int zmienna,zmienna2;
 		 	ss<<pesel.at(2)<<pesel.at(3);
@@ -112,7 +113,7 @@ using namespace std;
 			 }
 			 }
 		 	
-		 }
+		 };
 		 
 		 void PodajAdres(string adres)
 		 {
@@ -134,6 +135,7 @@ using namespace std;
  				return 1;
  			}
 		 };
+		 
 		 bool PodajRok(string rok)
 		 {
  			if(rok.find_first_of("qwertyuiopasdfghjklzxcvbnm") != std::string::npos)
@@ -189,7 +191,8 @@ using namespace std;
 				 }
 			 }
 		 	return indeks+"; "+pesel+"; "+imie+" "+nazwisko+"; "+rokz+" rok; zamieszka³y "+adres;
-		 }
+		 };
+		 
 		 bool SprawdzDzien(int dzien,int miesiac)
 		 {
 		 	if (dzien>0)
