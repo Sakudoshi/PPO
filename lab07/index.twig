@@ -25,16 +25,21 @@
 								{% if schedule.hasEvents(loop.index, loop.parent.loop.index)  %}
 									{% set events = schedule.getEvent(loop.index, loop.parent.loop.index) %}
 									{% set kolor = events.getColor() %}
-									<b  style="color:{{ kolor }}">{{ events.getFormName() }}<br>
+									<b  style="color:{{ kolor }}">{{ events.getFormName() }}
+									<br>
 									<small>{{ events.getName() }}</small> </b>
 								{% elseif schedule.hasClass(loop.index, loop.parent.loop.index)  %}
 									{% set class = schedule.getClass(loop.index, loop.parent.loop.index) %}
 									{% set kolor = class.getColor() %}
-										{%if (class.getBuilding()==schedule.returnVariable() or class.getTeacherName()==schedule.returnVariable() or class.getClasses()==schedule.returnVariable() 
+										{% if (class.getBuilding()==schedule.returnVariable() or class.getTeacherName()==schedule.returnVariable() or class.getClasses()==schedule.returnVariable() 
 										or class.getFormName()==schedule.returnVariable) %}
-											<small><b  style="color:{{ kolor }}">{{ class.getFormName() }}: {{class.onlyClasses()}}<br>{{ class.getTeacherName() }}</small><br>
-											{{ class.getName() }} </b><br>
-											{{class.getBuilding()}}{{class.getClasses()}}
+											<small><b  style="color:{{ kolor }}"> {{ class.getFormName() }}: {{ class.onlyClasses() }}
+											<br>
+											{{ class.getTeacherName() }}</small>
+											<br>
+											{{ class.getName() }} </b>
+											<br>
+											{{ class.getBuilding() }}{{ class.getClasses() }}
 										{% endif %}
 		
 								{% endif %}
@@ -48,14 +53,19 @@
 								{% if schedule.hasEvents(loop.index, loop.parent.loop.index)  %}
 									{% set events = schedule.getEvent(loop.index, loop.parent.loop.index) %}
 									{% set kolor = events.getColor() %}
-									<b  style="color:{{ kolor }}">{{ events.getFormName() }}<br>
+									<b  style="color:{{ kolor }}">{{ events.getFormName() }}
+									<br>
 									<small>{{ events.getName() }}</small> </b>
 								{% elseif schedule.hasClass(loop.index, loop.parent.loop.index)  %}
 									{% set class = schedule.getClass(loop.index, loop.parent.loop.index) %}
 									{% set kolor = class.getColor() %}
-									<small><b  style="color:{{ kolor }}">{{ class.getFormName() }}: {{class.onlyClasses()}}<br>{{ class.getTeacherName() }}</small><br>
-									{{ class.getName() }} </b><br>
-									{{class.getBuilding()}}{{class.getClasses()}}
+									<small><b  style="color:{{ kolor }}"> {{ class.getFormName() }}: {{ class.onlyClasses() }}
+									<br>
+									{{ class.getTeacherName() }}</small>
+									<br>
+									{{ class.getName() }} </b>
+									<br>
+									{{ class.getBuilding() }}{{ class.getClasses() }}
 								{% endif %}
 		
 							
